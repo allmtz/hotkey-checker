@@ -1,4 +1,4 @@
-export const chromeHotkeys = `Open a new window: Ctrl + n
+export const chromeHk = `Open a new window: Ctrl + n
         Open a new window in Incognito mode: Ctrl + Shift + n
         Open a new tab, and jump to it: Ctrl + t
         Reopen previously closed tabs in the order they were closed: Ctrl + Shift + t
