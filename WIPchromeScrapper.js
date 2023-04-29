@@ -1,3 +1,7 @@
+// TODO
+// "command" needs to be changed to "Meta"
+// "option" needs to be changed to "Alt"
+
 // for Chrome
 const modifiers = ["Ctrl", "Shift", "Alt", "⌘", "Option"];
 const modifierSet = new Set(modifiers);
