@@ -35,7 +35,7 @@ export default function Home() {
       } else {
         // key pressed was not a modifier ==> execute a query
         setInput((input) => {
-          const newInput = [...input, e.key]; // this is the input array that needs to be used to perform the query
+          const newInput = [...input, e.key.toLowerCase()]; // this is the input array that needs to be used to perform the query
           // console.log(newInput);
           const key = newInput.join(" + ");
 
