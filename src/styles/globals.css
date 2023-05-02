@@ -4,3 +4,14 @@
   align-items: center;
   padding: 1rem;
 }
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.large-text {
+  font-size: 2rem;
+}

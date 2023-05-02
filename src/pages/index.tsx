@@ -1,3 +1,4 @@
+import { TextDisplay } from "@/components/TextDisplay";
 import { useEffect, useState } from "react";
 import chromeHksObj from "../../chromeHotkeys";
 
@@ -63,12 +64,12 @@ export default function Home() {
     <>
       <div className="container">
         <h1>Press a key</h1>
-        <p>You Pressed</p>
-        <h1>{keyPressed}</h1>
-        <p>keycode is {keyCode}</p>
-        <h1>current input: {input.join(" + ")}</h1>
-        <h1>hotkey : {previousInput}</h1>
-        <h1>description : {description}</h1>
+        <TextDisplay
+          prompt="Current input : "
+          statefulText={input.join(" + ")}
+        />
+        <TextDisplay prompt="Hotkey : " statefulText={previousInput} />
+        <TextDisplay prompt="Description : " statefulText={description} />
       </div>
     </>
   );
