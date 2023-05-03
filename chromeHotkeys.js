@@ -1,3 +1,6 @@
+// TODO
+// format raw HKs here? if so ==> "command" needs to be changed to "Meta" & "option" needs to be changed to "Alt"
+
 import { chromeHk } from "./WIPchormeHotkeys";
 
 let chromeHksObj = {};
@@ -9,7 +12,16 @@ chromeHk.split("\n").forEach((line) => {
   const description = shortcut[0];
   const hotkey = shortcut[1];
 
-  chromeHksObj[hotkey] = description;
+  if (hotkey.includes("or")) {
+    // Create multiple entries for shortcuts that have multiple hotkeys
+    const hotkeyVariants = hotkey.split("or");
+
+    hotkeyVariants.forEach(
+      (variant) => (chromeHksObj[variant.trim()] = description)
+    );
+  } else {
+    chromeHksObj[hotkey] = description;
+  }
 });
 
 export default chromeHksObj;
