@@ -1,3 +1,4 @@
+import { InputDisplay } from "@/components/InputDisplay";
 import { TextDisplay } from "@/components/TextDisplay";
 import { useEffect, useState } from "react";
 import chromeHksObj from "../../chromeHotkeys";
@@ -13,7 +14,7 @@ export default function Home() {
   const [keyCode, setkeyCode] = useState("");
   const [input, setInput] = useState<string[]>([]);
   const [description, setDescription] = useState("");
-  const [previousInput, setpreviousInput] = useState("");
+  const [previousInput, setpreviousInput] = useState<string[]>([]);
 
   useEffect(() => {
     const keydownHandler = (e: KeyboardEvent) => {
@@ -42,10 +43,10 @@ export default function Home() {
 
           if (chromeHksObj[key as keyof object]) {
             setDescription(chromeHksObj[key as keyof object]);
-            setpreviousInput(key);
+            setpreviousInput(newInput);
           } else {
             setDescription("Not found");
-            setpreviousInput(key);
+            setpreviousInput(newInput);
           }
 
           // reset the input array
@@ -64,11 +65,8 @@ export default function Home() {
     <>
       <div className="container">
         <h1>Press a key</h1>
-        <TextDisplay
-          prompt="Current input : "
-          statefulText={input.join(" + ")}
-        />
-        <TextDisplay prompt="Hotkey : " statefulText={previousInput} />
+        <InputDisplay prompt="Current input : " input={input} />
+        <InputDisplay prompt="Previous input : " input={previousInput} />
         <TextDisplay prompt="Description : " statefulText={description} />
       </div>
     </>
