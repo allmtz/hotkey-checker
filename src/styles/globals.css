@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: whitesmoke;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -8,6 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  gap: 3rem;
 }
 
 .flex-row {
@@ -28,4 +35,9 @@ body {
   background-color: rgb(235, 235, 235);
   padding: 1rem 1.5rem;
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.338);
+}
+
+.display {
+  min-height: 80px;
+  min-width: 750px;
 }

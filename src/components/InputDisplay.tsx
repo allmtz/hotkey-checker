@@ -8,7 +8,7 @@ export const InputDisplay = ({
   input: string[];
 }) => {
   return (
-    <div className="flex-row">
+    <div className="flex-row display">
       <p>{prompt}</p>
       {input.map((item, idx) => (
         <>
