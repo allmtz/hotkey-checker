@@ -18,6 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     const keydownHandler = (e: KeyboardEvent) => {
+      e.preventDefault();
       setkeyCode(e.code);
       setKeyPressed(e.key);
 
