@@ -6,13 +6,9 @@ export const TextDisplay = ({
   statefulText: string;
 }) => {
   return (
-    <>
-      <div className="flex-row">
-        <p>{prompt} </p>
-        <p className="large-text flex-row ">
-          <b>{statefulText}</b>
-        </p>
-      </div>
-    </>
+    <div className="flex-row">
+      <p>{prompt}</p>
+      <p className="large-text">{statefulText}</p>
+    </div>
   );
 };
