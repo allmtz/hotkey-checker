@@ -41,3 +41,23 @@ body {
   min-height: 80px;
   min-width: 750px;
 }
+
+.selectors-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.selector-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.browser-icon,
+.browser-checkbox {
+  cursor: pointer;
+}

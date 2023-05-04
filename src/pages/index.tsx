@@ -1,3 +1,9 @@
+// TODO
+// create a "target browser" selector DONE
+// depending on which browsers are being targeted, need a way to check multiple HkObjs for a matching input
+// display input matches for multiple browsers
+
+import { BrowserSelector } from "@/components/BrowserSelector";
 import { InputDisplay } from "@/components/InputDisplay";
 import { TextDisplay } from "@/components/TextDisplay";
 import { useEffect, useState } from "react";
@@ -16,6 +22,7 @@ export default function Home() {
   const [input, setInput] = useState<string[]>([]);
   const [description, setDescription] = useState("");
   const [previousInput, setpreviousInput] = useState<string[]>([]);
+  const [targetBrowsers, setTargetBrowsers] = useState(new Set<string>());
 
   useEffect(() => {
     const keydownHandler = (e: KeyboardEvent) => {
@@ -65,8 +72,23 @@ export default function Home() {
   }, []);
   return (
     <>
+      <div className="selectors-container">
+        <BrowserSelector
+          browser="chrome"
+          targetBrowsers={targetBrowsers}
+          setTargetBrowsers={setTargetBrowsers}
+        />
+        <BrowserSelector
+          browser="brave"
+          targetBrowsers={targetBrowsers}
+          setTargetBrowsers={setTargetBrowsers}
+        />
+      </div>
+
       <div className="container">
-        <h1>Press a key</h1>
+        <h1>
+          {targetBrowsers.size > 0 ? "Press a key" : "Select target browsers"}
+        </h1>
         <InputDisplay prompt="Current input : " input={input} />
         <InputDisplay prompt="Previous input : " input={previousInput} />
         <TextDisplay prompt="Description : " statefulText={description} />
