@@ -1,7 +1,8 @@
 import { InputDisplay } from "@/components/InputDisplay";
 import { TextDisplay } from "@/components/TextDisplay";
 import { useEffect, useState } from "react";
-import chromeHksObj from "../../chromeHotkeys";
+import { chromeHksObj } from "../../hkObjectCreator";
+import { braveHksObj } from "../../hkObjectCreator";
 
 // Working with the browser keydown event and its properties
 // for letters : might need a case normalizer ==> can use e.key to check which key was pressed

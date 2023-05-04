@@ -1,3 +1,5 @@
+// works for Brave and Chrome
+
 // TODO
 // "command" needs to be changed to "Meta"
 // "option" needs to be changed to "Alt"

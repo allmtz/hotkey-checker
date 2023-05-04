@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import mysql from "mysql2";
-import { chromeHk } from "../../../WIPchormeHotkeys";
+import { chromeHks } from "../../../chromeHotkeys";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const db = mysql.createConnection({
@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 });
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const lines = chromeHk.split("\n");
+  const lines = chromeHks.split("\n");
 
   lines.forEach((line) => {
     const splitLine = line.split(":");
