@@ -1,11 +1,11 @@
 import { braveHK } from "./braveHotkeys";
 import { chromeHks } from "./chromeHotkeys";
 
-function createObject(hkString) {
-  let hkObj = {};
+function createObject(hks:string) {
+  let hkObj: { [key:string]:string } = {};
 
   // Create an object out of the shortcuts to quickly determine if the user inputs a valid hotkey
-  hkString.split("\n").forEach((line) => {
+  hks.split("\n").forEach((line) => {
     const shortcut = line.split(":");
 
     const description = shortcut[0].trim();
