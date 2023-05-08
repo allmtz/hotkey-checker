@@ -47,6 +47,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .selector-container {
@@ -60,4 +61,16 @@ body {
 .browser-icon,
 .browser-checkbox {
   cursor: pointer;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.description-results {
+  display: flex;
+  width: 100%;
 }

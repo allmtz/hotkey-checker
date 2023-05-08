@@ -28,8 +28,8 @@ export const BrowserSelector = ({
           className="browser-icon"
           alt={browser}
           src={`./${browser}.svg`}
-          height={20}
-          width={20}
+          height={25}
+          width={25}
         />
       </label>
       <input
@@ -37,6 +37,7 @@ export const BrowserSelector = ({
         type="checkbox"
         id={`${browser}-selector`}
         onClick={() => updateTargetBrowsers(browser)}
+        data-browser={browser}
       />
     </div>
   );

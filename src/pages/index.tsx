@@ -5,16 +5,35 @@
 
 import { BrowserSelector } from "@/components/BrowserSelector";
 import { InputDisplay } from "@/components/InputDisplay";
-import { TextDisplay } from "@/components/TextDisplay";
 import { useEffect, useState } from "react";
 import { chromeHksObj } from "../../hkObjectCreator";
 import { braveHksObj } from "../../hkObjectCreator";
+import { ResultsDisplay } from "@/components/ResultsDisplay";
 
 // Working with the browser keydown event and its properties
 // for letters : might need a case normalizer ==> can use e.key to check which key was pressed
 
+type description = string;
+
+type browserHkObj = {
+  [browser: string]: {
+    [hotkey: string]: description;
+  };
+};
+
+export type InputMatch = {
+  browser: string;
+  hotkey: string;
+  description: string;
+};
+
 const modifierSet = new Set(["Shift", "Control", "Meta", "Alt"]);
 const MAX_MODIFIERS = 3;
+
+const browserHksObj: browserHkObj = {
+  chrome: chromeHksObj,
+  brave: braveHksObj,
+};
 
 export default function Home() {
   const [keyPressed, setKeyPressed] = useState("");
@@ -23,6 +42,7 @@ export default function Home() {
   const [description, setDescription] = useState("");
   const [previousInput, setpreviousInput] = useState<string[]>([]);
   const [targetBrowsers, setTargetBrowsers] = useState(new Set<string>());
+  const [searchResults, setSearchResults] = useState<InputMatch[]>([]);
 
   useEffect(() => {
     const keydownHandler = (e: KeyboardEvent) => {
@@ -45,21 +65,40 @@ export default function Home() {
         });
       } else {
         // key pressed was not a modifier ==> execute a query
-        setInput((input) => {
-          const newInput = [...input, e.key.toLowerCase()]; // this is the input array that needs to be used to perform the query
-          // console.log(newInput);
-          const key = newInput.join(" + ");
 
-          if (chromeHksObj[key as keyof object]) {
-            setDescription(chromeHksObj[key as keyof object]);
-            setpreviousInput(newInput);
-          } else {
-            setDescription("Not found");
-            setpreviousInput(newInput);
+        let browsersSelected: string[] = [];
+
+        const browserOptions: NodeListOf<HTMLInputElement> =
+          document.querySelectorAll(".browser-checkbox");
+
+        // determine which browsers the user selected
+        browserOptions.forEach((browser) => {
+          if (browser.checked) {
+            browsersSelected.push(browser.dataset["browser"]!);
           }
+        });
 
-          // reset the input array
-          setInput([]);
+        setInput((input) => {
+          const newInput = [...input, e.key]; // this is the input array that needs to be used to perform the query
+          const hk = newInput.join(" + ");
+          let matches: InputMatch[] = [];
+
+          // search the selected browsers to see if the user input matches any hotkeys
+          browsersSelected.forEach((browser) => {
+            const desc =
+              browserHksObj[browser as keyof object][hk as keyof object];
+
+            const match: InputMatch = {
+              browser: browser,
+              hotkey: hk,
+              description: desc || "No hotkey found",
+            };
+            matches.push(match);
+          });
+
+          setSearchResults(matches);
+          setpreviousInput(newInput);
+          setInput([]); // reset the input array
 
           return newInput;
         });
@@ -91,7 +130,7 @@ export default function Home() {
         </h1>
         <InputDisplay prompt="Current input : " input={input} />
         <InputDisplay prompt="Previous input : " input={previousInput} />
-        <TextDisplay prompt="Description : " statefulText={description} />
+        <ResultsDisplay searchResults={searchResults} />
       </div>
     </>
   );
