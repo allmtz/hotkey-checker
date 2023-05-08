@@ -113,6 +113,10 @@ const optionReplacement = "Alt";
 const commandRegex = /⌘/g;
 const commandReplacement = "Meta";
 
+const ctrlRegex = /Ctrl/g;
+const ctrlReplacement = "Control";
+
 export const braveHK = beforeRegex
   .replace(optionRegex, optionReplacement)
-  .replace(commandRegex, commandReplacement);
+  .replace(commandRegex, commandReplacement)
+  .replace(ctrlRegex, ctrlReplacement);
