@@ -1,8 +1,9 @@
 import { braveHK } from "./braveHotkeys";
 import { chromeHks } from "./chromeHotkeys";
+import { firefoxHks } from "./WIPfirefoxHotkeys";
 
-function createObject(hks:string) {
-  let hkObj: { [key:string]:string } = {};
+function createObject(hks: string) {
+  let hkObj: { [key: string]: string } = {};
 
   // Create an object out of the shortcuts to quickly determine if the user inputs a valid hotkey
   hks.split("\n").forEach((line) => {
@@ -27,3 +28,4 @@ function createObject(hks:string) {
 
 export const chromeHksObj = createObject(chromeHks);
 export const braveHksObj = createObject(braveHK);
+export const firefoxHksObj = createObject(firefoxHks);
