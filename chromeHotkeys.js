@@ -1,5 +1,7 @@
+import { standardize } from "./regex";
+
 // filtered Chrome shortcuts
-const beforeRegex = `Open a new window: Control + n
+const rawChromeHks = `Open a new window: Control + n
 Open a new window in Incognito mode: Control + Shift + n
 Open a new tab, and jump to it: Control + t
 Reopen previously closed tabs in the order they were closed: Control + Shift + t
@@ -118,12 +120,4 @@ Open a link, and jump to it: Meta + Shift + Click a link
 Open a link in a new window: Shift + Click a link
 Download the target of a link: Alt + Click a link`;
 
-const optionRegex = /Option/g;
-const optionReplacement = "Alt";
-
-const commandRegex = /⌘/g;
-const commandReplacement = "Meta";
-
-export const chromeHks = beforeRegex
-  .replace(optionRegex, optionReplacement)
-  .replace(commandRegex, commandReplacement);
+export const chromeHks = standardize(rawChromeHks);

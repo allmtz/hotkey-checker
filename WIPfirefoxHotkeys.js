@@ -1,6 +1,8 @@
+import { standardize } from "./regex";
+
 // from https://www.computerhope.com/shortcut/firefox.htm
 // updated 5/9/23
-const beforeRegex = `Open your homepage. : Alt + home
+const rawFirefoxHks = `Open your homepage. : Alt + home
 Open the bookmarks in the file menu. : Alt + Shift + b
 Display all previous text entered in a text box and available options on drop-down menu. : Alt + ↓
 Back a page. : Alt + ←
@@ -42,7 +44,4 @@ Undo the close of a tab. : Ctrl + Shift + t
 Close the Firefox browser window. If multiple tabs are open in the Firefox window you'll get a prompt before Firefox closes. : Ctrl + Shift + w
 Moves up a page at a time. : Shift + spacebar`;
 
-const ctrlRegex = /Ctrl/g;
-const ctrlReplacement = "Control";
-
-export const firefoxHks = beforeRegex.replace(ctrlRegex, ctrlReplacement);
+export const firefoxHks = standardize(rawFirefoxHks);
