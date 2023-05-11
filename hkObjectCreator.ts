@@ -1,4 +1,4 @@
-import { braveHK } from "./braveHotkeys";
+import { braveHks } from "./braveHotkeys";
 import { chromeHks } from "./chromeHotkeys";
 import { firefoxHks } from "./WIPfirefoxHotkeys";
 
@@ -27,5 +27,5 @@ function createObject(hks: string) {
 }
 
 export const chromeHksObj = createObject(chromeHks);
-export const braveHksObj = createObject(braveHK);
+export const braveHksObj = createObject(braveHks);
 export const firefoxHksObj = createObject(firefoxHks);
