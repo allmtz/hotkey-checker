@@ -1,6 +1,6 @@
 import { braveHks } from "./braveHotkeys";
 import { chromeHks } from "./chromeHotkeys";
-import { firefoxHks } from "./WIPfirefoxHotkeys";
+import { firefoxHks } from "./firefoxHotkeys";
 
 function createObject(hks: string) {
   let hkObj: { [key: string]: string } = {};
