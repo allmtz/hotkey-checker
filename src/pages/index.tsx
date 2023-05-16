@@ -115,28 +115,29 @@ export default function Home() {
   }, []);
   return (
     <>
-      <div className="selectors-container">
-        <BrowserSelector
-          browser="chrome"
-          targetBrowsers={targetBrowsers}
-          setTargetBrowsers={setTargetBrowsers}
-        />
-        <BrowserSelector
-          browser="brave"
-          targetBrowsers={targetBrowsers}
-          setTargetBrowsers={setTargetBrowsers}
-        />
-        <BrowserSelector
-          browser="firefox"
-          targetBrowsers={targetBrowsers}
-          setTargetBrowsers={setTargetBrowsers}
-        />
-      </div>
-
       <div className="container">
         <h1>
           {targetBrowsers.size > 0 ? "Press a key" : "Select target browsers"}
         </h1>
+
+        <div className="selectors-container">
+          <BrowserSelector
+            browser="chrome"
+            targetBrowsers={targetBrowsers}
+            setTargetBrowsers={setTargetBrowsers}
+          />
+          <BrowserSelector
+            browser="brave"
+            targetBrowsers={targetBrowsers}
+            setTargetBrowsers={setTargetBrowsers}
+          />
+          <BrowserSelector
+            browser="firefox"
+            targetBrowsers={targetBrowsers}
+            setTargetBrowsers={setTargetBrowsers}
+          />
+        </div>
+
         <InputDisplay prompt="Current input : " input={input} />
         <InputDisplay prompt="Previous input : " input={previousInput} />
         <ResultsDisplay searchResults={searchResults} />
