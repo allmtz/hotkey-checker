@@ -8,19 +8,23 @@
 // Enter
 
 const regex = {
-  control: /Ctrl/g,
-  option: /Option/g,
-  command: /Command|⌘/g,
+  control: /Ctrl|control/g,
+  shift: /shift/g,
+  option: /Option|option/g,
+  command: /Command|⌘|command/g,
+  tab: /tab/g,
   rightArrow: /Right arrow|→/g,
   leftArrow: /Left arrow|←/g,
-  upArrow: /Up arrow/g,
+  upArrow: /Up arrow|↑/g,
   downArrow: /Down Arrow|↓/g,
 };
 
 const replacements = {
   control: "Control",
+  shift: "Shift",
   option: "Alt",
   command: "Meta",
+  tab: "Tab",
   rightArrow: "ArrowRight",
   leftArrow: "ArrowLeft",
   upArrow: "ArrowUp",
@@ -32,6 +36,7 @@ const standardize = (s: string) => {
     .replace(regex.control, replacements.control)
     .replace(regex.option, replacements.option)
     .replace(regex.command, replacements.command)
+    .replace(regex.tab, replacements.tab)
     .replace(regex.upArrow, replacements.upArrow)
     .replace(regex.downArrow, replacements.downArrow)
     .replace(regex.leftArrow, replacements.leftArrow)
