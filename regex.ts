@@ -1,3 +1,12 @@
+// - standard names and casings:
+// Shift
+// Meta for Command & Windows key
+// Control
+// Alt for Option
+// Tab
+// ArrowRight/Left/Up/Down
+// Enter
+
 const regex = {
   control: /Ctrl/g,
   option: /Option/g,
