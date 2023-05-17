@@ -1,7 +1,6 @@
 //  for https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly#firefox:mac:fx114
 
 // TODO
-// create regex for "Page Down"
 // for "control + shift + tab", need to change index.js to run a search when max modifiers are reached. currently just clearing input
 
 const modifiers = [
