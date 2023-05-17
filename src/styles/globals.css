@@ -77,3 +77,8 @@ body {
 input[type="checkbox"] {
   outline: none;
 }
+
+.input-prompt,
+.description-text{
+  font-size: 1.2rem;
+}

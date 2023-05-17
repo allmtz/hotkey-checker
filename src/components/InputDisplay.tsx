@@ -9,7 +9,7 @@ export const InputDisplay = ({
 }) => {
   return (
     <div className="flex-row display">
-      <p>{prompt}</p>
+      <p className="input-prompt">{prompt}</p>
       {input.map((item, idx) => (
         <>
           {idx !== 0 && <span>+</span>}
