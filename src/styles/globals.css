@@ -73,3 +73,7 @@ body {
   display: flex;
   width: 100%;
 }
+
+input[type="checkbox"] {
+  outline: none;
+}
