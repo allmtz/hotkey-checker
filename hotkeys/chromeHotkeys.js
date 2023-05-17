@@ -92,7 +92,7 @@ Log in as a different user, browse as a Guest, or access payment and password in
 Cycle focus to unfocused dialog (if showing) and all toolbars: Meta + Alt + Up arrow or Down arrow
 Open a feedback form: Meta + Alt + Shift + i
 Focus on inactive dialogs: Meta + Alt + Shift + a
-Jump to the address bar: Meta + l
+Jump to the address bar: Meta + lgl
 Move cursor to the address bar: Control + F5
 Compose a new email message with a link to the current page: Meta + Shift + i
 Open options to print the current page: Meta + p

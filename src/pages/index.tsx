@@ -11,7 +11,7 @@ import {
   chromeHksObj,
   braveHksObj,
   firefoxHksObj,
-} from "../../hkObjectCreator";
+} from "../../hotkeys/hkObjectCreator";
 
 // Working with the browser keydown event and its properties
 // for letters : might need a case normalizer ==> can use e.key to check which key was pressed

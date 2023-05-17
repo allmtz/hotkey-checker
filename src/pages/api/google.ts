@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import mysql from "mysql2";
-import { chromeHks } from "../../../chromeHotkeys";
+import { chromeHks } from "../../../hotkeys/chromeHotkeys";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const db = mysql.createConnection({
