@@ -8,15 +8,15 @@
 // Enter
 
 const regex = {
-  control: /Ctrl|control/g,
+  control: /Ctrl|ctrl|control/g,
   shift: /shift/g,
   option: /Option|option/g,
   command: /Command|⌘|command/g,
   tab: /tab/g,
-  rightArrow: /Right arrow|→/g,
-  leftArrow: /Left arrow|←/g,
-  upArrow: /Up arrow|↑/g,
-  downArrow: /Down Arrow|↓/g,
+  rightArrow: /Right arrow|→|right arrow/g,
+  leftArrow: /Left arrow|←|left arrow/g,
+  upArrow: /Up arrow|↑|up arrow/g,
+  downArrow: /Down Arrow|↓|down arrow/g,
   pageUp: /page up|PgUp/g,
   pageDown: /page down|PgDn/g,
 };

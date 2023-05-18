@@ -1,5 +1,6 @@
 import { braveHks } from "./braveHotkeys";
 import { chromeHks } from "./chromeHotkeys";
+import { edgeHks } from "./edgeHotkeys";
 import { firefoxHks } from "./firefoxHotkeys";
 
 function createObject(hks: string) {
@@ -29,3 +30,4 @@ function createObject(hks: string) {
 export const chromeHksObj = createObject(chromeHks);
 export const braveHksObj = createObject(braveHks);
 export const firefoxHksObj = createObject(firefoxHks);
+export const edgeHksObj = createObject(edgeHks);

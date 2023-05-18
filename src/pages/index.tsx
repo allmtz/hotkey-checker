@@ -11,6 +11,7 @@ import {
   chromeHksObj,
   braveHksObj,
   firefoxHksObj,
+  edgeHksObj,
 } from "../../hotkeys/hkObjectCreator";
 
 // Working with the browser keydown event and its properties
@@ -37,6 +38,7 @@ const browserHksObj: browserHkObj = {
   chrome: chromeHksObj,
   brave: braveHksObj,
   firefox: firefoxHksObj,
+  edge: edgeHksObj,
 };
 
 export default function Home() {
@@ -133,6 +135,11 @@ export default function Home() {
           />
           <BrowserSelector
             browser="firefox"
+            targetBrowsers={targetBrowsers}
+            setTargetBrowsers={setTargetBrowsers}
+          />
+          <BrowserSelector
+            browser="edge"
             targetBrowsers={targetBrowsers}
             setTargetBrowsers={setTargetBrowsers}
           />
