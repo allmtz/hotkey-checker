@@ -18,7 +18,7 @@ export const ResultsDisplay = ({
               height={20}
               width={20}
             />
-            <p>: {result.description}</p>
+            <p className="description-text">: {result.description}</p>
           </div>
         </>
       ))}
