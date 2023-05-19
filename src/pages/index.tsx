@@ -1,8 +1,3 @@
-// TODO
-// create a "target browser" selector DONE
-// depending on which browsers are being targeted, need a way to check multiple HkObjs for a matching input
-// display input matches for multiple browsers
-
 import { BrowserSelector } from "@/components/BrowserSelector";
 import { InputDisplay } from "@/components/InputDisplay";
 import { useEffect, useState } from "react";
@@ -13,9 +8,6 @@ import {
   firefoxHksObj,
   edgeHksObj,
 } from "../../hotkeys/hkObjectCreator";
-
-// Working with the browser keydown event and its properties
-// for letters : might need a case normalizer ==> can use e.key to check which key was pressed
 
 type description = string;
 

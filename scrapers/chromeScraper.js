@@ -1,18 +1,6 @@
 // works for Brave and Chrome
-
-// TODO
-// "command" needs to be changed to "Meta"
-// "option" needs to be changed to "Alt"
-
-// for Chrome
 const modifiers = ["Ctrl", "Shift", "Alt", "⌘", "Option"];
 const modifierSet = new Set(modifiers);
-
-// working on downloading a results file straight from the browser
-// const a = document.createElement("a");
-// a.download = "sucess";
-// a.id = "downloadAnchor";
-// document.body.appendChild(a);
 
 // select all entries in the table
 const nodes = document.body.querySelectorAll("td");
