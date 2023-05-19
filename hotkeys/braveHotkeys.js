@@ -1,13 +1,22 @@
 import { standardize } from "./regex";
 
-// filtered Brave shortcuts
+// from https://support.brave.com/hc/en-us/articles/360032272171-What-keyboard-shortcuts-can-I-use-in-Brave-
+// for Mac and Windows
+// updated 5/19/23
 const rawBraveHks = `Open a new window: Ctrl + n
 Open a new window in Private mode: Ctrl + Shift + n
 Open a new tab, and jump to it: Ctrl + t
 Reopen the last closed tab, and jump to it: Ctrl + Shift + t
 Jump to the next open tab: Ctrl + Tab or Ctrl + PgDn
 Jump to the previous open tab: Ctrl + Shift + Tab or Ctrl + PgUp
-Jump to a specific tab: Ctrl + 1 through Ctrl + 8
+Jump to a specific tab: Ctrl + 1
+Jump to a specific tab: Ctrl + 2
+Jump to a specific tab: Ctrl + 3
+Jump to a specific tab: Ctrl + 4
+Jump to a specific tab: Ctrl + 5
+Jump to a specific tab: Ctrl + 6
+Jump to a specific tab: Ctrl + 7
+Jump to a specific tab: Ctrl + 8
 Jump to the last tab: Ctrl + 9
 Open your home page in the current tab: Alt + Home
 Open the previous page from your browsing history in the current tab: Alt + Left arrow
@@ -37,7 +46,7 @@ Open options to print the current page: Ctrl + p
 Open options to save the current page: Ctrl + s
 Reload the current page, ignoring cached content: Shift + F5 or Ctrl + Shift + r
 Browse clickable items moving backward: Shift + Tab
-Open a file from your computer in Brave: Ctrl + o + Select a file
+Open a file from your computer in Brave: Ctrl + o
 Display non-editable HTML source code for the current page: Ctrl + u
 Save your current webpage as a bookmark: Ctrl + d
 Save all open tabs as bookmarks in a new folder: Ctrl + Shift + d
@@ -62,7 +71,14 @@ Open a new tab, and jump to it: ⌘ + t
 Reopen the last closed tab, and jump to it: ⌘ + Shift + t
 Jump to the next open tab: ⌘ + Option + Right arrow
 Jump to the previous open tab: ⌘ + Option + Left arrow
-Jump to a specific tab: ⌘ + 1 through ⌘ + 8
+Jump to a specific tab: Meta + 1
+Jump to a specific tab: Meta + 2
+Jump to a specific tab: Meta + 3
+Jump to a specific tab: Meta + 4
+Jump to a specific tab: Meta + 5
+Jump to a specific tab: Meta + 6
+Jump to a specific tab: Meta + 7
+Jump to a specific tab: Meta + 8
 Jump to the last tab: ⌘ + 9
 Open the previous page in your browsing history for the current tab: ⌘ + [ or ⌘ + Left arrow
 Open the next page in your browsing history for the current tab: ⌘ + ] or ⌘ + Right arrow
@@ -89,7 +105,7 @@ Open options to save the current page: ⌘ + s
 Open the Page Setup dialog: ⌘ + Option + p
 Reload your current page, ignoring cached content: ⌘ + Shift + r
 Browse clickable items moving backward: Shift + Tab
-Open a file from your computer in Brave: ⌘ + o + Select a file
+Open a file from your computer in Brave: ⌘ + o
 Display non-editable HTML source code for the current page: ⌘ + Option + u
 Open the JavaScript Console: ⌘ + Option + j
 Save your current webpage as a bookmark: ⌘ + d

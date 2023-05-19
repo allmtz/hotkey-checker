@@ -1,7 +1,7 @@
 import { standardize } from "./regex";
 
 // from https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly#firefox:mac:fx114
-// version 114 for Mac
+// version 114 for Mac and Windows
 // updated 5/9/23
 const rawFirefoxHks = `FOR: MAC
 Back : command + ←
