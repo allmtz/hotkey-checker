@@ -9,7 +9,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav{
+nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -18,15 +18,14 @@ nav{
   padding-top: 1rem;
 }
 
-nav a{
+nav a {
   color: black;
   text-decoration: none;
   font-size: 1.2rem;
-
 }
 
-nav a:hover{
-  opacity: .5;
+nav a:hover {
+  opacity: 0.5;
 }
 
 .container {
@@ -99,29 +98,29 @@ input[type="checkbox"] {
 }
 
 .input-prompt,
-.description-text{
+.description-text {
   font-size: 1.2rem;
 }
 
-.about-page{
+.about-page {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  max-width: 80%;
 }
 
-.about-header{
+.about-header {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.about-text{
+.about-text {
   font-size: 1.1rem;
-  margin-top: .2rem;
+  margin-top: 0.2rem;
   line-height: 1.5rem;
 }
 
 .about-page ul {
-  list-style: none;  
+  list-style: none;
 }
-
